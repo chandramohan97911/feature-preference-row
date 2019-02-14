@@ -29,7 +29,7 @@ public class PreferenceRowService {
 	
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	private Queue<Map.Entry<Long, WorkOrder>> priorityQueue = new PriorityQueue<>(new CompareByValue());
-	private List<Long> priorityOrderList = new ArrayList<>();
+	private List<Long> priorityOrderList = new CopyOnWriteArrayList<>();
 	/**
 	 * 
 	 * @param workOrderDto(String orderId, String orderDate)
